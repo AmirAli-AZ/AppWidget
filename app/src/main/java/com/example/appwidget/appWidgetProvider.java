@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.widget.RemoteViews;
+import androidx.annotation.ColorInt;
 
 import static com.example.appwidget.widgetConfig.PREFS;
 import static com.example.appwidget.widgetConfig.KEY_TEXT;
@@ -23,7 +24,7 @@ public class appWidgetProvider extends AppWidgetProvider {
             SharedPreferences pref = context.getSharedPreferences(PREFS , context.MODE_PRIVATE);
             //get values
             String text = pref.getString(KEY_TEXT + id , "Hi");
-            int color = pref.getInt(COLOR_KEY + id , Color.WHITE);
+            @ColorInt int color = pref.getInt(COLOR_KEY + id , Color.WHITE);
 
             RemoteViews views = new RemoteViews(context.getPackageName() , R.layout.widget_layout);
             views.setOnClickPendingIntent(R.id.text , pendingIntent);
@@ -38,7 +39,7 @@ public class appWidgetProvider extends AppWidgetProvider {
             appWidgetManager.updateAppWidget(id , views);
         }
     }
-    public boolean isColorDark(int color){
+    public boolean isColorDark(@ColorInt int color){
         double darkness = 1-(0.299*Color.red(color) + 0.587*Color.green(color) + 0.114*Color.blue(color))/255;
         if(darkness<0.5) return false;
         else return true;
