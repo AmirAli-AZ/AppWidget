@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".widgetConfig"
-                  android:exported="true">
+                  android:exported="true"
+                  android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
