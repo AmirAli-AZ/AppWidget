@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.graphics.Color;
 import com.coderz.f1.customdialogs.colordialog.ColorDialog;
 
-public class widgetConfig extends AppCompatActivity {
+public class WidgetConfig extends AppCompatActivity {
     private TextView colorValue;
     private TextView color;
     private LinearLayout linear1;
@@ -61,9 +61,9 @@ public class widgetConfig extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 text = editText.getText().toString();
-                AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(widgetConfig.this);
-                Intent intent = new Intent(widgetConfig.this , MainActivity.class);
-                PendingIntent pendingIntent = PendingIntent.getActivity(widgetConfig.this , 0 , intent , 0);
+                AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(WidgetConfig.this);
+                Intent intent = new Intent(WidgetConfig.this , MainActivity.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(WidgetConfig.this , 0 , intent , 0);
 
                 RemoteViews views = new RemoteViews(getApplicationContext().getPackageName() , R.layout.widget_layout);
 
@@ -91,7 +91,7 @@ public class widgetConfig extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Color piker by TheRandomCrafter83
-                ColorDialog cd = new ColorDialog(widgetConfig.this, new ColorDialog.DialogResponseListener() {
+                ColorDialog cd = new ColorDialog(WidgetConfig.this, new ColorDialog.DialogResponseListener() {
                     @Override
                     public void onOkClicked(int c) {
                         appWidgetColor = c;

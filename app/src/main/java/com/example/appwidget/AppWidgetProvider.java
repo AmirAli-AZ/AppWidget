@@ -2,7 +2,6 @@ package com.example.appwidget;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
-import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,11 +9,11 @@ import android.graphics.Color;
 import android.widget.RemoteViews;
 import androidx.annotation.ColorInt;
 
-import static com.example.appwidget.widgetConfig.PREFS;
-import static com.example.appwidget.widgetConfig.KEY_TEXT;
-import static com.example.appwidget.widgetConfig.COLOR_KEY;
+import static com.example.appwidget.WidgetConfig.PREFS;
+import static com.example.appwidget.WidgetConfig.KEY_TEXT;
+import static com.example.appwidget.WidgetConfig.COLOR_KEY;
 
-public class appWidgetProvider extends AppWidgetProvider {
+public class AppWidgetProvider extends android.appwidget.AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         for(int id : appWidgetIds){
